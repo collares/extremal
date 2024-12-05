@@ -477,7 +477,7 @@ theorem KovariSosTuran (h : ¬ (Kst s t) ⊑ G) (hs : 2 ≤ t) (ht : t ≤ s) :
 
   rw [← h₂] at h₃
   field_simp only [f, Real.choose] at h₃ h₁
-  apply (div_le_div_right <| by exact_mod_cast Nat.factorial_pos _).1 ∘ (·.trans h₁) at h₃
+  apply (div_le_div_iff_of_pos_right <| by exact_mod_cast Nat.factorial_pos _).1 ∘ (·.trans h₁) at h₃
 
   have absurd : (m : ℝ) ≤ s1 ^ (1 / t : ℝ) / 2 * n ^ (2 - 1 / t : ℝ) + (t - 1) / 2 * n := by
     have : (0 : ℝ) ≤ (2 * m - n * (t - 1)) / n := by
